@@ -7,11 +7,12 @@ var Player = {
 	walkStance: 1, // walk stage 1 or 2 if walking
 	walkStanceChanged: 0,
 
-	width: Math.round( 100 * spriteSheet.width / 6 ) / 100,
+	// These are all set when we resize the game page (Player.load())
+	width: 0,
 	// How wide we want to make the collision object
 	// We have to do this because the sprite actually has some extra space around it...
-	collideWidth: 0.6 * Math.round( 100 * spriteSheet.width / 6 ) / 100,
-	height: Math.round( 100 * spriteSheet.height / 3 ) / 100,
+	collideWidth: 0,
+	height: 0,
 
 	// If the player collides with an object, we store information about it here (and reuse this object)
 	// The reason we reuse this object is so we're not creating more unused memory that the garbage collector has to clean
@@ -38,8 +39,20 @@ var Player = {
 		y: Game.GRAVITY
 	},
 
+	paused: true,
+
 	start: function() {
-		// Don't really need to do anything, but put stuff related to the player on the game start here..
+		// Don't really need to do anything, but put stuff related to the player on the game start here...
+		this.paused = false;
+	},
+
+	// handle resizing
+	resize: function() {
+		this.width = Math.round( 100 * Game.spriteSheet.canvas.width / 6 ) / 100;
+		// How wide we want to make the collision object
+		// We have to do this because the sprite actually has some extra space around it...
+		this.collideWidth = 0.6 * Math.round( 100 * Game.spriteSheet.image.width / 6 ) / 100;
+		this.height = Math.round( 100 * Game.spriteSheet.canvas.height / 3 ) / 100;
 	},
 
 	getState: function() {
@@ -260,10 +273,11 @@ var Player = {
 	 * Draw the player sprite on the canvas
 	 */
 	draw: function() {
-		var sprite = sprites[ this.state ];
-
+		if( this.paused ) return;
+		var sprite = Game.spriteSheet.sprites[ this.state ];
 		// Actually draw the player sprite on the canvas
 		// Parameters are: img, sx (x coordinate for clipping), sy (y coordinate for clipping), swidth (width of clipped image), sheight (height of clipped image), x, y, width, height
-		Game.ctx.drawImage( spriteSheet, sprite.x, sprite.y, this.width, this.height, this.x - Game.xOffset, this.y, this.width, this.height );
+		Game.ctx.drawImage( Game.spriteSheet.canvas, sprite.x, sprite.y, this.width, this.height, this.x - Game.xOffset, this.y, this.width, this.height );
 	}
 };
+i = 0;

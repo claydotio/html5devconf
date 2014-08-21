@@ -1,3 +1,4 @@
+// TODO: This may no longer be necessary if there's no realtime coding in presentation
 var Presentation = {
 	tryCode: function( id ) {
 		// Yeah, yeah, I'm using eval...
