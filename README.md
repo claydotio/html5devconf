@@ -1,5 +1,3 @@
-HTML5.tx Presentation
+HTML5DevConf Presentation
 ========
-A presentation given at [HTML5.tx](http://html5tx.com/) 2013 about the basics of HTML5 game development.
-
-Have a look around the /js folder for an example of a very basic platformer game.
+A presentation given at [HTML5DevConf](html5devconf.com) 2014 about the current state of HTML5 game development.
