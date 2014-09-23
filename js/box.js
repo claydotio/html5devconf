@@ -4,6 +4,11 @@ var Box = ( function() {
 	// Text goes inside the box, this is just like your standard css padding...
 	Box.PADDING = 15;
 
+	Box.COLOR = '#fff';
+	Box.BG_COLOR = 'rgba( 100, 100, 100, 0.8 )';
+	Box.BG_COLOR_SELECTED = '#fcaa2f';
+	Box.COLOR_SELECTED = '#262626';
+
 	function Box( id, x, y, width, height )
 	{
 		this.id = id;
@@ -14,7 +19,7 @@ var Box = ( function() {
 		{
 			this.text = ele.getAttribute( 'data-title' );
 			var fontSize = 12 * Game.SCALE.y;
-			Game.ctx.font = fontSize + 'px ptserif, georgia, serif';
+			Game.ctx.font = fontSize + 'px Roboto, sans-serif';
 			// We'll also override the box width to be the right width to fit the text
 			var size = Game.ctx.measureText( this.text );
 			this.width = size.width + Box.PADDING * 2;
@@ -32,7 +37,9 @@ var Box = ( function() {
 		this.bottom = y + this.height;
 
 		// Background color of box
-		this.background = 'rgba( 100, 100, 100, 0.8 )';
+		this.background = Box.BG_COLOR;
+		// Font color
+		this.color = Box.COLOR;
 	}
 
 	/**
@@ -77,8 +84,8 @@ var Box = ( function() {
 		if( typeof this.text !== 'undefined' )
 		{
 			var fontSize = 12 * Game.SCALE.y;
-			Game.ctx.font = fontSize + 'px ptserif, georgia, serif';
-			Game.ctx.fillStyle = '#fff';
+			Game.ctx.font = fontSize + 'px Roboto, sans-serif';
+			Game.ctx.fillStyle = this.color;
 			Game.ctx.fillText( this.text, this.left - Game.xOffset + Box.PADDING, this.top + fontSize + Box.PADDING );
 		}
 	};

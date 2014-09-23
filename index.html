@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 		<title>HTML5DevConf Presentation</title>
-		<meta name="description" content="A basic HTML5 game...presentation" />
-		<meta name="author" content="Austin Hallock" />
+		<meta name="description" content="A basic HTML5 game...presentation">
+		<meta name="author" content="Austin Hallock">
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<!-- Syntax highlighter -->
-		<link href="css/prism.css" rel="stylesheet" />
+		<!--<link href="css/prism.css" rel="stylesheet" />-->
 		<link href="css/style.css" rel="stylesheet" />
 	</head>
 
@@ -38,6 +35,7 @@
 					<li>Capabilities</li>
 					<li>Development</li>
 					<li>Distribution</li>
+					<li>Monetization</li>
 				</ul>
 			</ul>
 		</div>
@@ -48,7 +46,7 @@
 				<li><b>Easily accessible games</b></li>
 				<ul>
 					<li>Freedom from the app stores</li>
-					<li>Webview capabilities</li>
+					<li>Webview capabilities - less friction</li>
 				</ul>
 				<li>Cross-platform</li>
 				<ul>
@@ -57,16 +55,28 @@
 					<li>Tablets</li>
 					<li>Smart TVs / Consoles?</li>
 				</ul>
-				<li>Quick development &amp; test process</li><!-- TODO: Have example of live-tweaking the game? -->
+				<li>Quick development &amp; testing process</li><!-- TODO: Have example of live-tweaking the game? -->
 			</ul>
 		</div>
 
 		<div class='slide' id='slide-capabilities' data-title='Capabilities in 2014'>
 			<h1>Capabilities in 2014</h1>
 			<ul>
+				<li>Performance gains</li>
 				<li>WebGL</li>
 				<ul>
 					<li>iOS 8, Chrome on Android, IE11</li>
+					<li>iOS 8 50% adoption as of Oct 20th 2014</li>
+				</ul>
+				<li>Webviews</li>
+				<ul>
+					<li>Safari and Webview on same engine in iOS 8</li>
+					<li>Android Webview unbundled from Android, auto-updates</li>
+				</ul>
+				<li>Webviews</li>
+				<ul>
+					<li>iOS 8 Safari and Webview on same engine</li>
+					<li>Android Webview unbundled from Android, auto-updates</li>
 				</ul>
 				<li>Performance gains</li>
 			</ul>
@@ -75,7 +85,17 @@
 		<div class='slide' id='slide-performance' data-title='Performance Gains'>
 			<h1>Performance Gains</h1>
 			<ul>
-				<li>TODO: Image of benchmarks over the years</li>
+				<li>Pixi.js Bunnymark</li>
+				<li>iPhone 4 (~4 years old)</li>
+				<ul>
+					<li>60fps: 100 bunnies</li>
+					<li>30fps: 300 bunnies</li>
+				</ul>
+				<li>Nexus 5 (WebGL)</li>
+				<ul>
+					<li>60fps: 7000 bunnies</li>
+					<li>30fps: 12,800 bunnies</li>
+				</ul>
 			</ul>
 		</div>
 
@@ -84,12 +104,17 @@
 			<ul>
 				<li>Open Source Libraries</li>
 				<ul>
-					<li>Phaser, Pixi, ...</li>
+					<li>Phaser, Pixi, Cocos2dx ...</li>
 				</ul>
 				<li>WebGL Focused</li>
 				<ul>
 					<li>PlayCanvas, Goo, ...</li>
 				</ul>
+				<li>Cross-compliation</li>
+				<ul>
+					<li>Emscripten + asm.js</li>
+				</ul>
+				<li><a href='http://html5gameengine.com' target='_blank'>HTML5GameEngine.com</a>
 			</ul>
 		</div>
 
@@ -101,7 +126,89 @@
 					<li>Kik, Facebook, WeChat, ...</li>
 				</ul>
 				<li>App Stores (wrapper &amp; "native")</li>
+				<ul>
+					<li>CocoonJS, Ejecta, Intel SDK</li>
+				</ul>
 				<li>Browsers</li>
+				<ul>
+					<li>Game portals</li>
+				</ul>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-kik' data-title='Kik'>
+			<h1>Kik</h1>
+			<ul>
+				<li>Messaging app</li>
+				<li>150 million users</li>
+				<li>HTML5 platform built-in</li>
+				<li>~600 apps in their ecosystem</li>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-firefox-os' data-title='Firefox OS'>
+			<h1>Firefox OS</h1>
+			<ul>
+				<li>Developing countries</li>
+				<li>$25 phones</li>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-amazon' data-title='Amazon App Store'>
+			<h1>Amazon Appstore</h1>
+			<ul>
+				<li>Actively looking for good HTML5 games</li>
+				<li>Huge company backing it</li>
+				<li>Kindle, Fire Phone, Baked into Amazon App</li>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-windows' data-title='Windows App Store'>
+			<h1>Windows App Store</h1>
+			<ul>
+				<li>Large audience</li>
+				<li>Windows tablets, Phones</li>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-flash-portals' data-title='Flash Portals'>
+			<h1>Flash Portals</h1>
+			<ul>
+				<li>Kongregate</li>
+				<li>Newgrounds</li>
+				<li>Mobile Web Arcade</li>
+				<li>Long tail of others</li>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-ios-android' data-title='iOS &amp; Android'>
+			<h1>iOS &amp; Android</h1>
+			<ul>
+				<li>Hard to stand out, but not impossible</li>
+				<li>Wrap game with PhoneGap, CocoonJS, etc...</li>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-others' data-title='Others'>
+			<h1>Others</h1>
+			<ul>
+				<li>Tizen</li>
+				<li>Ubuntu Phone</li>
+				<li>Clay</li>
+			</ul>
+		</div>
+
+		<div class='slide' id='slide-monetization' data-title='Monetization'>
+			<h1>Monetization</h1>
+			<ul>
+				<li>Licensing</li>
+				<ul>
+					<li>Exclusive</li>
+					<li>Non-exclusive</li>
+				</ul>
+				<li>Branded Games</li>
+				<li>Advertising</li>
+				<li>In-App Payments</li>
 			</ul>
 		</div>
 
@@ -110,11 +217,10 @@
 			<ul>
 				<li>HTML5 Games are ready now</li>
 				<ul>
-					<li>HTML5 Games are ready now</li>
 					<li>Technology is there, Distribution is there, Monetization will get there</li>
 				</ul>
 			</ul>
-			<a href='http://clay.io'><img src='http://clay.io/images/full-logo.svg' style='border: none;' /></a>
+			<a href='http://clay.io'><img src='images/logo_light.svg' style='border: none;' width='400'></a>
 		</div>
 
 		<div class='slide' id='slide-contact' data-title='Contact Info'>
@@ -122,9 +228,9 @@
 			<ul>
 				<li>austin@clay.io</li>
 				<li>@austinhallock</li>
+				<li>We're Hiring!</li>
 			</ul>
 		</div>
-
 
 		<script type='text/javascript' src='js/game.js'></script>
 		<script type='text/javascript' src='js/helpers.js'></script>
@@ -135,7 +241,7 @@
 
 		<script type='text/javascript' src='js/presentation.js'></script>
 		<script type='text/javascript' src='http://clay.io/pennapps/gamecontroller.js'></script>
-		<script type='text/javascript' src='js/prism.js'></script>
+		<!--<script type='text/javascript' src='js/prism.js'></script>--><!-- code styling -->
 
 	</body>
 </html>

@@ -237,10 +237,14 @@ var Player = {
 					this.collision.called = true;
 					// Make the previous box color gray again
 					if( this.previousCollision.object )
-						this.previousCollision.object.background = 'rgba( 100, 100, 100, 0.8 )';
+					{
+						this.previousCollision.object.background = Box.BG_COLOR;
+						this.previousCollision.object.color = Box.COLOR;
+					}
 
 					// Make the color of this box blue
-					this.collision.object.background = '#00659C';
+					this.collision.object.background = Box.BG_COLOR_SELECTED;
+					this.collision.object.color = Box.COLOR_SELECTED;
 					// Hide previous slide
 					document.querySelector( '.show' ).className = 'slide';
 					// Show the one we landed on
