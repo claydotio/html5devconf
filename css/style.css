@@ -7,6 +7,7 @@ body {
   overflow: hidden;
   background: #222 url(http://clay.io/images/transparent-stars.png);
   color: #fff;
+  font-size: 24px;
 }
 a {
   color: #fff;
